@@ -1,0 +1,23 @@
+{
+  "name": "chemist",
+  "version": "0.0.0",
+  "description": "high-level array manipulation",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/justinvdm/chemist.git"
+  },
+  "main": "chemist.js",
+  "scripts": {
+    "test": "mocha -R spec chemist.test.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "drainpipe": "^0.1.0"
+  },
+  "keywords": [
+    "array",
+    "manipulation"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "chemist",
+  "main": "chemist.js",
+  "description": "high-level array manipulation in javascript",
+  "homepage": "https://github.com/justinvdm/chemist",
+  "authors": ["justinvdm <justinvdm.0.1.0@gmail.com>"],
+  "license": "MIT",
+  "keywords": [
+    "array",
+    "manipulation"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
