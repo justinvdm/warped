@@ -5,6 +5,7 @@ var vv = require('drainpipe')
 var warped = require('./warped'),
     slice = warped.slice,
     rmAt = warped.rmAt,
+    map = warped.map,
     repeat = warped.repeat,
     random = warped.random,
     randInt = warped.randInt,
@@ -50,6 +51,21 @@ describe("warped", function() {
       vv([1, 2, 3, 4])
         (slice, 1, -1)
         (assert.deepEqual, [2, 3])
+    })
+  })
+
+
+  describe(".map", function() {
+    it("should map the values in the array", function() {
+      vv([1, 2, 3, 4])
+        (map, function(v) { return v + 1 })
+        (assert.deepEqual, [2, 3, 4, 5])
+    })
+
+    it("should support extra args", function() {
+      vv([1, 2, 3, 4])
+        (map, function(a, b, c) { return a + b + c }, 2, 3)
+        (assert.deepEqual, [6, 7, 8, 9])
     })
   })
 

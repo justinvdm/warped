@@ -58,10 +58,38 @@
   }
 
 
+  function map(arr, fn) {
+    fn = prime(slice(arguments, 2), fn)
+    var results = []
+    var i = -1
+    var n = arr.length
+    while (++i < n) results.push(fn(arr[i]))
+    return results
+  }
+
+
+  function run(obj) {
+    var args = slice(arguments, 1)
+
+    return typeof obj == 'function'
+      ? obj.apply(this, args)
+      : obj
+  }
+
+
   function idx(arr, i) {
     if (i > 0) return i
     var n = arr.length
     return n + (i % n)
+  }
+
+
+  function prime(args, fn) {
+    if (!args.length) return fn
+
+    return function(x) {
+      return fn.apply(this, [x].concat(args))
+    }
   }
 
 
@@ -73,6 +101,7 @@
 
 
   var warped = {
+    map: map,
     slice: slice,
     concat: concat,
     abs: abs,
