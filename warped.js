@@ -5,9 +5,29 @@
   var slice = fromNative(Array.prototype.slice)
   var concat = fromNative(Array.prototype.concat)
   var round = Math.round
+  var abs = Math.abs
   var floor = Math.floor
   var ceil = Math.ceil
   var random = Math.random
+
+
+  function rmAt(arr, start, end) {
+    start = idx(arr, start)
+
+    end = arguments.length > 2
+      ? idx(arr, end)
+      : start
+
+    var results = []
+    var n = arr.length
+    var i = -1
+
+    while (++i < start) results.push(arr[i])
+    i = end
+    while (++i < n) results.push(arr[i])
+
+    return results
+  }
 
 
   function randInt(lo, hi) {
@@ -30,6 +50,13 @@
   }
 
 
+  function idx(arr, i) {
+    if (i > 0) return i
+    var n = arr.length
+    return n + (i % n)
+  }
+
+
   function fromNative(nativeFn) {
     return function(target) {
       return nativeFn.apply(target, _slice.call(arguments, 1))
@@ -40,9 +67,11 @@
   var warped = {
     slice: slice,
     concat: concat,
+    abs: abs,
     floor: floor,
     round: round,
     ceil: ceil,
+    rmAt: rmAt,
     random: random,
     randInt: randInt,
     randIdx: randIdx,

@@ -4,6 +4,7 @@ var vv = require('drainpipe')
 
 var warped = require('./warped'),
     slice = warped.slice,
+    rmAt = warped.rmAt,
     random = warped.random,
     randInt = warped.randInt,
     randIdx = warped.randIdx,
@@ -50,6 +51,34 @@ describe("warped", function() {
     })
   })
 
+
+  describe(".rmAt", function() {
+    it("should omit the value at the given index", function() {
+      vv([1, 2, 3])
+        (rmAt, 2)
+        (assert.deepEqual, [1, 2])
+
+      vv([1, 2, 3, 4])
+        (rmAt, 2)
+        (assert.deepEqual, [1, 2, 4])
+
+      vv([1, 2, 3])
+        (rmAt, -2)
+        (assert.deepEqual, [1, 3])
+    })
+
+    it("should omit the values at the given indices", function() {
+      vv([1, 2, 3, 4, 5, 6])
+        (rmAt, 2, 4)
+        (assert.deepEqual, [1, 2, 6])
+
+      vv([1, 2, 3, 4, 5, 6])
+        (rmAt, -5, -3)
+        (assert.deepEqual, [1, 5, 6])
+    })
+  })
+
+
   describe(".randInt", function() {
     it("should generate a random integer between two numbers", function() {
       randx = 0.8
@@ -75,6 +104,7 @@ describe("warped", function() {
     })
   })
 
+
   describe(".randVal", function() {
     it("should pick a random value", function() {
       randx = 0.8
@@ -82,6 +112,4 @@ describe("warped", function() {
       assert.equal(randVal([3, 2, 4, 8, 23, 2, 6]), 23)
     })
   })
-
-  describe
 })
