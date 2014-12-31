@@ -10,13 +10,6 @@
   var random = Math.random
 
 
-  function fromNative(nativeFn) {
-    return function(target) {
-      return nativeFn.apply(target, _slice.call(arguments, 1))
-    }
-  }
-
-
   function randint(lo, hi) {
     if (arguments.length < 2) {
       hi = lo
@@ -27,6 +20,19 @@
   }
 
 
+  function randval(arr) {
+    var i = randint(arr.length - 1)
+    return arr[i]
+  }
+
+
+  function fromNative(nativeFn) {
+    return function(target) {
+      return nativeFn.apply(target, _slice.call(arguments, 1))
+    }
+  }
+
+
   var warped = {
     slice: slice,
     concat: concat,
@@ -34,7 +40,8 @@
     round: round,
     ceil: ceil,
     random: random,
-    randint: randint
+    randint: randint,
+    randval: randval
   }
 
 

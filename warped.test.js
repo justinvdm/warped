@@ -5,7 +5,8 @@ var vv = require('drainpipe')
 var warped = require('./warped'),
     slice = warped.slice,
     random = warped.random,
-    randint = warped.randint
+    randint = warped.randint,
+    randval = warped.randval
 
 
 describe("warped", function() {
@@ -61,6 +62,14 @@ describe("warped", function() {
       assert.equal(randint(10), 8)
       assert.equal(randint(20), 16)
       assert.equal(randint(30), 24)
+    })
+  })
+
+  describe(".randval", function() {
+    it("should pick a random value", function() {
+      randx = 0.8
+      assert.equal(randval([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 16)
+      assert.equal(randval([3, 2, 4, 8, 9, 2, 9, 23, 2, 6]), 23)
     })
   })
 })
