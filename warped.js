@@ -20,9 +20,13 @@
   }
 
 
+  function randidx(arr) {
+    return randint(arr.length - 1)
+  }
+
+
   function randval(arr) {
-    var i = randint(arr.length - 1)
-    return arr[i]
+    return arr[randidx(arr)]
   }
 
 
@@ -41,6 +45,7 @@
     ceil: ceil,
     random: random,
     randint: randint,
+    randidx: randidx,
     randval: randval
   }
 

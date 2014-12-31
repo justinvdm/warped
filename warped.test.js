@@ -6,6 +6,7 @@ var warped = require('./warped'),
     slice = warped.slice,
     random = warped.random,
     randint = warped.randint,
+    randidx = warped.randidx,
     randval = warped.randval
 
 
@@ -65,11 +66,20 @@ describe("warped", function() {
     })
   })
 
+
+  describe(".randidx", function() {
+    it("should pick a index", function() {
+      randx = 0.8
+      assert.equal(randidx([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 7)
+      assert.equal(randidx([3, 2, 4, 9, 23, 2, 6]), 4)
+    })
+  })
+
   describe(".randval", function() {
     it("should pick a random value", function() {
       randx = 0.8
       assert.equal(randval([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 16)
-      assert.equal(randval([3, 2, 4, 8, 9, 2, 9, 23, 2, 6]), 23)
+      assert.equal(randval([3, 2, 4, 8, 23, 2, 6]), 23)
     })
   })
 })
