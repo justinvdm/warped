@@ -10,7 +10,7 @@
   var random = Math.random
 
 
-  function randint(lo, hi) {
+  function randInt(lo, hi) {
     if (arguments.length < 2) {
       hi = lo
       lo = 0
@@ -20,13 +20,13 @@
   }
 
 
-  function randidx(arr) {
-    return randint(arr.length - 1)
+  function randIdx(arr) {
+    return randInt(arr.length - 1)
   }
 
 
-  function randval(arr) {
-    return arr[randidx(arr)]
+  function randVal(arr) {
+    return arr[randIdx(arr)]
   }
 
 
@@ -44,9 +44,9 @@
     round: round,
     ceil: ceil,
     random: random,
-    randint: randint,
-    randidx: randidx,
-    randval: randval
+    randInt: randInt,
+    randIdx: randIdx,
+    randVal: randVal
   }
 
 
