@@ -5,6 +5,7 @@ var vv = require('drainpipe')
 var warped = require('./warped'),
     slice = warped.slice,
     rmAt = warped.rmAt,
+    repeat = warped.repeat,
     random = warped.random,
     randInt = warped.randInt,
     randIdx = warped.randIdx,
@@ -27,6 +28,7 @@ describe("warped", function() {
     warped.random = random
   })
 
+
   describe("native functions", function() {
     it("should wrap native functions", function() {
       vv([1, 2, 3, 4])
@@ -48,6 +50,15 @@ describe("warped", function() {
       vv([1, 2, 3, 4])
         (slice, 1, -1)
         (assert.deepEqual, [2, 3])
+    })
+  })
+
+
+  describe(".repeat", function() {
+    it("should repeat the given value", function() {
+      vv(23)
+        (repeat, 3)
+        (assert.deepEqual, [23, 23, 23])
     })
   })
 

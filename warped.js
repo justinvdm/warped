@@ -11,6 +11,14 @@
   var random = Math.random
 
 
+  function repeat(v, n) {
+    n = n || 1
+    var results = []
+    while (n--) results.push(v)
+    return results
+  }
+
+
   function rmAt(arr, start, end) {
     start = idx(arr, start)
 
@@ -72,6 +80,7 @@
     round: round,
     ceil: ceil,
     rmAt: rmAt,
+    repeat: repeat,
     random: random,
     randInt: randInt,
     randIdx: randIdx,
