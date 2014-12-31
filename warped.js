@@ -1,4 +1,5 @@
 ;(function() {
+  var isArray = Array.isArray
   var _slice = Array.prototype.slice
 
 
@@ -68,6 +69,28 @@
   }
 
 
+  function deepMap(arr, fn) {
+    fn = prime(slice(arguments, 2), fn)
+
+    var results = []
+    var n = arr.length
+    var i = -1
+    var v
+
+    while (++i < n) {
+      v = arr[i]
+
+      v = isArray(v)
+        ? deepMap(v, fn)
+        : fn(v)
+
+      results.push(v)
+    }
+
+    return results
+  }
+
+
   function run(obj) {
     var args = slice(arguments, 1)
 
@@ -102,6 +125,7 @@
 
   var warped = {
     map: map,
+    deepMap: deepMap,
     slice: slice,
     concat: concat,
     abs: abs,

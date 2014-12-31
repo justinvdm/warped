@@ -6,6 +6,7 @@ var warped = require('./warped'),
     slice = warped.slice,
     rmAt = warped.rmAt,
     map = warped.map,
+    deepMap = warped.deepMap,
     repeat = warped.repeat,
     random = warped.random,
     randInt = warped.randInt,
@@ -66,6 +67,21 @@ describe("warped", function() {
       vv([1, 2, 3, 4])
         (map, function(a, b, c) { return a + b + c }, 2, 3)
         (assert.deepEqual, [6, 7, 8, 9])
+    })
+  })
+
+
+  describe(".deepMap", function() {
+    it("should map the values in each array", function() {
+      vv([1, [2, [3, 4]]])
+        (deepMap, function(v) { return v + 1 })
+        (assert.deepEqual, [2, [3, [4, 5]]])
+    })
+
+    it("should support extra args", function() {
+      vv([1, [2, [3, 4]]])
+        (deepMap, function(a, b, c) { return a + b + c }, 2, 3)
+        (assert.deepEqual, [6, [7, [8, 9]]])
     })
   })
 
