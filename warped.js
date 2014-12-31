@@ -23,11 +23,11 @@
       lo = 0
     }
 
-    return floor(chemist.random() * (hi - lo)) + lo
+    return floor(warped.random() * (hi - lo)) + lo
   }
 
 
-  var chemist = {
+  var warped = {
     slice: slice,
     concat: concat,
     floor: floor,
@@ -39,9 +39,9 @@
 
 
   if (typeof module != 'undefined')
-    module.exports = chemist
+    module.exports = warped
   else if (typeof define == 'function' && define.amd)
-    define(function() { return chemist })
+    define(function() { return warped })
   else
-    this.chemist = chemist
+    this.warped = warped
 }).call(this);

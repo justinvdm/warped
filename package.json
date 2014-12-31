@@ -1,14 +1,14 @@
 {
-  "name": "chemist",
+  "name": "warped",
   "version": "0.0.0",
   "description": "high-level array manipulation",
   "repository": {
     "type": "git",
-    "url": "git://github.com/justinvdm/chemist.git"
+    "url": "git://github.com/justinvdm/warped.git"
   },
-  "main": "chemist.js",
+  "main": "warped.js",
   "scripts": {
-    "test": "mocha -R spec chemist.test.js"
+    "test": "mocha -R spec warped.test.js"
   },
   "author": "",
   "license": "MIT",

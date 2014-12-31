@@ -2,13 +2,13 @@ var assert = require('assert')
 var vv = require('drainpipe')
 
 
-var chemist = require('./chemist'),
-    slice = chemist.slice,
-    random = chemist.random,
-    randint = chemist.randint
+var warped = require('./warped'),
+    slice = warped.slice,
+    random = warped.random,
+    randint = warped.randint
 
 
-describe("chemist", function() {
+describe("warped", function() {
   var randx
 
   function fakeRandom() {
@@ -17,11 +17,11 @@ describe("chemist", function() {
 
   beforeEach(function() {
     randx = 0
-    chemist.random = fakeRandom
+    warped.random = fakeRandom
   })
 
   afterEach(function() {
-    chemist.random = random
+    warped.random = random
   })
 
   describe("native functions", function() {

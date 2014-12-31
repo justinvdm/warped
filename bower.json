@@ -1,8 +1,8 @@
 {
-  "name": "chemist",
-  "main": "chemist.js",
+  "name": "warped",
+  "main": "warped.js",
   "description": "high-level array manipulation in javascript",
-  "homepage": "https://github.com/justinvdm/chemist",
+  "homepage": "https://github.com/justinvdm/warped",
   "authors": ["justinvdm <justinvdm.0.1.0@gmail.com>"],
   "license": "MIT",
   "keywords": [
