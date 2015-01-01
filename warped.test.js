@@ -9,6 +9,7 @@ var warped = require('./warped'),
     deepMap = warped.deepMap,
     repeat = warped.repeat,
     when = warped.when,
+    exists = warped.exists,
     random = warped.random,
     randInt = warped.randInt,
     randIdx = warped.randIdx,
@@ -121,6 +122,15 @@ describe("warped", function() {
 
       function odd(v) { return !!(v % 2) }
       function inc(v) { return v + 1 }
+    })
+  })
+
+
+  describe(".exists", function() {
+    it("should determine whether a value is null or undefined", function() {
+      assert(exists(23))
+      assert(!exists(null))
+      assert(!exists(void 0))
     })
   })
 

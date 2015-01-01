@@ -107,6 +107,12 @@
   }
 
 
+  function exists(v) {
+    return typeof v != 'undefined'
+        && v !== null
+  }
+
+
   function idx(arr, i) {
     if (i > 0) return i
     var n = arr.length
@@ -142,6 +148,7 @@
     rmAt: rmAt,
     repeat: repeat,
     when: when,
+    exists: exists,
     random: random,
     randInt: randInt,
     randIdx: randIdx,
