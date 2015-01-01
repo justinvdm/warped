@@ -100,6 +100,13 @@
   }
 
 
+  function when(v, truthFn, doFn) {
+    return truthFn(v)
+      ? doFn(v)
+      : v
+  }
+
+
   function idx(arr, i) {
     if (i > 0) return i
     var n = arr.length
@@ -134,6 +141,7 @@
     ceil: ceil,
     rmAt: rmAt,
     repeat: repeat,
+    when: when,
     random: random,
     randInt: randInt,
     randIdx: randIdx,

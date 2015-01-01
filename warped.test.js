@@ -8,6 +8,7 @@ var warped = require('./warped'),
     map = warped.map,
     deepMap = warped.deepMap,
     repeat = warped.repeat,
+    when = warped.when,
     random = warped.random,
     randInt = warped.randInt,
     randIdx = warped.randIdx,
@@ -91,6 +92,35 @@ describe("warped", function() {
       vv(23)
         (repeat, 3)
         (assert.deepEqual, [23, 23, 23])
+    })
+  })
+
+
+  describe(".when", function() {
+    it("should return the do fn result when the truth fn passes", function() {
+      vv(3)
+        (when, odd, inc)
+        (assert.equal, 4)
+
+      vv(23)
+        (when, odd, inc)
+        (assert.equal, 24)
+
+      function odd(v) { return !!(v % 2) }
+      function inc(v) { return v + 1 }
+    })
+
+    it("should return original val if the truth fn fails", function() {
+      vv(2)
+        (when, odd, inc)
+        (assert.equal, 2)
+
+      vv(4)
+        (when, odd, inc)
+        (assert.equal, 4)
+
+      function odd(v) { return !!(v % 2) }
+      function inc(v) { return v + 1 }
     })
   })
 
