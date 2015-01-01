@@ -5,6 +5,7 @@
 
   var slice = fromNative(Array.prototype.slice)
   var concat = fromNative(Array.prototype.concat)
+  var reverse = fromNative(Array.prototype.reverse)
   var round = Math.round
   var abs = Math.abs
   var floor = Math.floor
@@ -141,6 +142,7 @@
     deepMap: deepMap,
     slice: slice,
     concat: concat,
+    reverse: reverse,
     abs: abs,
     floor: floor,
     round: round,
