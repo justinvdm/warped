@@ -8,6 +8,7 @@ var warped = require('./warped'),
     map = warped.map,
     deepMap = warped.deepMap,
     repeat = warped.repeat,
+    run = warped.run,
     when = warped.when,
     exists = warped.exists,
     random = warped.random,
@@ -105,6 +106,19 @@ describe("warped", function() {
       vv(23)
         (repeat, 3)
         (assert.deepEqual, [23, 23, 23])
+    })
+  })
+
+
+  describe(".run", function() {
+    it("should return the result of the function invocation", function() {
+      vv(23)
+        (run, function(v) { return v })
+        (assert.equal, 23)
+
+      vv(23)
+        (run, function(v) { return v + 1 }, 23)
+        (assert.equal, 23)
     })
   })
 

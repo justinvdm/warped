@@ -142,6 +142,7 @@
     ceil: ceil,
     rmAt: rmAt,
     repeat: repeat,
+    run: run,
     when: when,
     exists: exists,
     random: random,
