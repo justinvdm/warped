@@ -60,33 +60,26 @@
   }
 
 
-  function map(arr, fn) {
+  function map(obj, fn) {
     fn = prime(slice(arguments, 2), fn)
+    if (!isArray(obj)) return fn(obj)
+
     var results = []
     var i = -1
-    var n = arr.length
-    while (++i < n) results.push(fn(arr[i]))
+    var n = obj.length
+    while (++i < n) results.push(fn(obj[i]))
     return results
   }
 
 
-  function deepMap(arr, fn) {
+  function deepMap(obj, fn) {
     fn = prime(slice(arguments, 2), fn)
+    if (!isArray(obj)) return fn(obj)
 
     var results = []
-    var n = arr.length
+    var n = obj.length
     var i = -1
-    var v
-
-    while (++i < n) {
-      v = arr[i]
-
-      v = isArray(v)
-        ? deepMap(v, fn)
-        : fn(v)
-
-      results.push(v)
-    }
+    while (++i < n) { results.push(deepMap(obj[i], fn)) }
 
     return results
   }

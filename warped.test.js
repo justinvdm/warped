@@ -70,6 +70,12 @@ describe("warped", function() {
         (map, function(a, b, c) { return a + b + c }, 2, 3)
         (assert.deepEqual, [6, 7, 8, 9])
     })
+
+    it("should support single value mapping", function() {
+      vv(23)
+        (map, function(v) { return v + 1 })
+        (assert.strictEqual, 24)
+    })
   })
 
 
@@ -84,6 +90,12 @@ describe("warped", function() {
       vv([1, [2, [3, 4]]])
         (deepMap, function(a, b, c) { return a + b + c }, 2, 3)
         (assert.deepEqual, [6, [7, [8, 9]]])
+    })
+
+    it("should support single value mapping", function() {
+      vv(23)
+        (deepMap, function(v) { return v + 1 })
+        (assert.strictEqual, 24)
     })
   })
 
