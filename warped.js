@@ -6,11 +6,8 @@
   var slice = fromNative(Array.prototype.slice)
   var concat = fromNative(Array.prototype.concat)
   var reverse = fromNative(Array.prototype.reverse)
-  var round = Math.round
-  var abs = Math.abs
-  var floor = Math.floor
-  var ceil = Math.ceil
   var random = Math.random
+  var floor = Math.floor
 
 
   function repeat(v, n) {
@@ -129,10 +126,6 @@
     slice: slice,
     concat: concat,
     reverse: reverse,
-    abs: abs,
-    floor: floor,
-    round: round,
-    ceil: ceil,
     rmAt: rmAt,
     repeat: repeat,
     run: run,
