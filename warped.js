@@ -94,13 +94,6 @@
   }
 
 
-  function when(v, truthFn, doFn) {
-    return truthFn(v)
-      ? doFn(v)
-      : v
-  }
-
-
   function exists(v) {
     return typeof v != 'undefined'
         && v !== null
@@ -143,7 +136,6 @@
     rmAt: rmAt,
     repeat: repeat,
     run: run,
-    when: when,
     exists: exists,
     random: random,
     randInt: randInt,
