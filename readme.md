@@ -74,7 +74,7 @@ function add(a, b) {
 
 Walks a nested array data structure `arr`, mapping each non-array value through a function `fn`. If extra arguments are given, they are used as extra arguments to each call to `fn` when mapping the values.
 
-```
+```javascript
 deepMap([1, [2, [3, 4]]], function(v) {
   return v + 1
 })
@@ -87,7 +87,7 @@ deepMap([1, [2, [3, 4]]], function(v) {
 
 Returns a shallow copy of array `arr` with the value at index `i` removed.
 
-```
+```javascript
 rmAt([1, 2, 3, 4], 2)
 // => [1, 2, 4]
 ```
@@ -98,7 +98,7 @@ If `i` is negative, it is resolved relative to the array's length. For example, 
 
 Returns a shallow copy of array `arr` with the values between indexes `start` and `end` removed.
 
-```
+```javascript
 rmAt([1, 2, 3, 4, 5, 6], 2, 4)
 // => [1, 2, 4]
 ```
