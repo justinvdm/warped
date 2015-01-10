@@ -97,6 +97,11 @@
   }
 
 
+  function identity(v) {
+    return v
+  }
+
+
   function idx(arr, i) {
     if (i > 0) return i
     var n = arr.length
@@ -130,6 +135,7 @@
     repeat: repeat,
     run: run,
     exists: exists,
+    identity: identity,
     random: random,
     randInt: randInt,
     randIdx: randIdx,

@@ -10,6 +10,7 @@ var warped = require('./warped'),
     repeat = warped.repeat,
     run = warped.run,
     exists = warped.exists,
+    identity = warped.identity,
     random = warped.random,
     randInt = warped.randInt,
     randIdx = warped.randIdx,
@@ -128,6 +129,14 @@ describe("warped", function() {
       assert(exists(23))
       assert(!exists(null))
       assert(!exists(void 0))
+    })
+  })
+
+
+  describe(".identity", function() {
+    it("should simply return what it is given", function() {
+      var v = {}
+      assert.strictEqual(identity(v), v)
     })
   })
 
