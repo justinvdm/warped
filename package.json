@@ -1,23 +1,24 @@
 {
   "name": "warped",
+  "main": "warped.js",
   "version": "0.0.0",
-  "description": "high-level array manipulation",
+  "description": "functions for pattern manipulation in javascript",
   "repository": {
     "type": "git",
     "url": "git://github.com/justinvdm/warped.git"
   },
-  "main": "warped.js",
   "scripts": {
     "test": "mocha -R spec warped.test.js"
   },
-  "author": "",
+  "author": "justinvdm",
   "license": "MIT",
   "devDependencies": {
     "mocha": "^1.21.4",
     "drainpipe": "^0.1.0"
   },
   "keywords": [
-    "array",
-    "manipulation"
+    "pattern",
+    "manipulation",
+    "music"
   ]
 }

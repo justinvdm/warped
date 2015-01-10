@@ -1,6 +1,8 @@
 # warped
 
-high-level functions for pattern manipulation in javascript
+![Build Status](https://api.travis-ci.org/justinvdm/warped.png)
+
+functions for pattern manipulation in javascript
 
 ```javascript
 var vv = require('drainpipe'),
