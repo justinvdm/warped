@@ -111,13 +111,14 @@ describe("warped", function() {
 
   describe(".run", function() {
     it("should return the result of the function invocation", function() {
-      vv(23)
-        (run, function(v) { return v })
+      vv(function(a, b) { return a + b })
+        (run, 11, 12)
         (assert.equal, 23)
+    })
 
-      vv(23)
-        (run, function(v) { return v + 1 }, 23)
-        (assert.equal, 23)
+    it("should simply return non-array values", function() {
+      var v = {}
+      assert.strictEqual(run(v), v)
     })
   })
 
