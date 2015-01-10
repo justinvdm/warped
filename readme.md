@@ -103,7 +103,7 @@ rmAt([1, 2, 3, 4, 5, 6], 2, 4)
 // => [1, 2, 4]
 ```
 
-Similar to [`rmAt(arr, i)`](#rmAtarr-i), `start` and `end` can be negative values.
+Similar to [`rmAt(arr, i)`](#rmatarr-i), `start` and `end` can be negative values.
 
 ### repeat(v, n)
 
