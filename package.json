@@ -1,7 +1,7 @@
 {
   "name": "warped",
   "main": "warped.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "functions for pattern manipulation in javascript",
   "repository": {
     "type": "git",

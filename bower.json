@@ -1,7 +1,6 @@
 {
   "name": "warped",
   "main": "warped.js",
-  "version": "0.0.0",
   "description": "functions for pattern manipulation in javascript",
   "homepage": "https://github.com/justinvdm/warped",
   "authors": ["justinvdm <justinvdm.0.1.0@gmail.com>"],
