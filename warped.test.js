@@ -172,8 +172,8 @@ describe("warped", function() {
     it("should generate a random integer between two numbers", function() {
       randx = 0.8
       assert.equal(randInt(2, 12), 10)
-      assert.equal(randInt(4, 20), 16)
-      assert.equal(randInt(3, 26), 21)
+      assert.equal(randInt(4, 20), 17)
+      assert.equal(randInt(3, 26), 22)
     })
 
     it("should generate a random integer between 0 and a number", function() {
@@ -188,8 +188,8 @@ describe("warped", function() {
   describe(".randIdx", function() {
     it("should pick a index", function() {
       randx = 0.8
-      assert.equal(randIdx([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 7)
-      assert.equal(randIdx([3, 2, 4, 9, 23, 2, 6]), 4)
+      assert.equal(randIdx([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 8)
+      assert.equal(randIdx([3, 2, 4, 9, 23, 2, 6]), 6)
     })
   })
 
@@ -197,8 +197,8 @@ describe("warped", function() {
   describe(".randVal", function() {
     it("should pick a random value", function() {
       randx = 0.8
-      assert.equal(randVal([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 16)
-      assert.equal(randVal([3, 2, 4, 8, 23, 2, 6]), 23)
+      assert.equal(randVal([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 18)
+      assert.equal(randVal([3, 2, 4, 8, 23, 2, 6]), 6)
     })
   })
 })

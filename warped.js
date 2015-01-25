@@ -43,7 +43,7 @@
       lo = 0
     }
 
-    return floor(warped.random() * (hi - lo)) + lo
+    return floor(warped.random() * ((hi + 1) - lo)) + lo
   }
 
 

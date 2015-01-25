@@ -163,7 +163,7 @@ randInt(10)
 
 ### randInt(lo, hi)
 
-Returns a random integer between `lo` and `hi`.
+Returns a random integer inclusively between `lo` and `hi`.
 
 ```javascript
 randInt(10, 20)
