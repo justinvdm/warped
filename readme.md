@@ -82,6 +82,15 @@ deepMap([1, [2, [3, 4]]], function(v) {
 // => [2, [3, [4, 5]]]
 ```
 
+### concatValues(arr)
+
+Concatenates the values in the given array `arr`,
+
+```javascript
+concatValues([1, [2, [3, 4]], 5, [6]])
+// => [1, 2, [3, 4], 5, 6]
+```
+
 
 ### rmAt(arr, i)
 

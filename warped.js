@@ -3,8 +3,9 @@
   var _slice = Array.prototype.slice
 
 
+  var _concat = Array.prototype.concat
+  var concat = fromNative(_concat)
   var slice = fromNative(Array.prototype.slice)
-  var concat = fromNative(Array.prototype.concat)
   var reverse = fromNative(Array.prototype.reverse)
   var random = Math.random
   var floor = Math.floor
@@ -82,6 +83,11 @@
   }
 
 
+  function concatValues(arr) {
+    return _concat.apply([], arr)
+  }
+
+
   function run(obj) {
     var args = slice(arguments, 1)
 
@@ -128,6 +134,7 @@
   var warped = {
     map: map,
     deepMap: deepMap,
+    concatValues: concatValues,
     slice: slice,
     concat: concat,
     reverse: reverse,

@@ -7,6 +7,7 @@ var warped = require('./warped'),
     rmAt = warped.rmAt,
     map = warped.map,
     deepMap = warped.deepMap,
+    concatValues = warped.concatValues,
     repeat = warped.repeat,
     run = warped.run,
     exists = warped.exists,
@@ -106,6 +107,15 @@ describe("warped", function() {
       vv(23)
         (repeat, 3)
         (assert.deepEqual, [23, 23, 23])
+    })
+  })
+
+
+  describe(".concatValues", function() {
+    it("should concat the values in the array", function() {
+      vv([1, [2, [3, 4]], 5, [6]])
+        (concatValues)
+        (assert.deepEqual, [1, 2, [3, 4], 5, 6])
     })
   })
 
