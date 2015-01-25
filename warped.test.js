@@ -189,7 +189,7 @@ describe("warped", function() {
     it("should pick a index", function() {
       randx = 0.8
       assert.equal(randIdx([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 8)
-      assert.equal(randIdx([3, 2, 4, 9, 23, 2, 6]), 6)
+      assert.equal(randIdx([3, 2, 4, 9, 23, 2, 6]), 5)
     })
   })
 
@@ -198,7 +198,7 @@ describe("warped", function() {
     it("should pick a random value", function() {
       randx = 0.8
       assert.equal(randVal([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 18)
-      assert.equal(randVal([3, 2, 4, 8, 23, 2, 6]), 6)
+      assert.equal(randVal([3, 2, 4, 8, 23, 2, 6]), 2)
     })
   })
 })
