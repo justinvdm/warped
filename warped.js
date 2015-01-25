@@ -48,7 +48,7 @@
 
 
   function randIdx(arr) {
-    return randInt(arr.length)
+    return randInt(arr.length - 1)
   }
 
 
